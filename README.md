@@ -32,3 +32,11 @@ docker run -d \
   [other_gitlab_runner_env_vars] \
   <your_image_name>
 ```
+
+## How to use Boundary from CI/CD scripts
+
+You can modify the following command for your needs. It runs the ``/root/script.sh`` on remote server.
+
+```
+echo "/root/script.sh" | boundary connect ssh -target-id tssh_xxmlOvaQDT
+```
