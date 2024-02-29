@@ -7,4 +7,4 @@ RUN apt update ; apt install -y lsb-release gnupg2 apt-utils jq pass ; apt -y up
 COPY *.sh /root/
 WORKDIR /root/
 #CMD /bin/bash /root/boundary-login.sh ; gitlab-runner run
-ENTRYPOINT ["/bin/sh", "-c" , "./boundary-login.sh ; ./setup.sh ; gitlab-runner run"]
+ENTRYPOINT ["/bin/sh", "-c" , "./boundary-login.sh ; gitlab-runner run"]
