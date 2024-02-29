@@ -1,13 +1,13 @@
 # Dockefile for GitLab Runner + Hashicorp Boundary
 
-This project creates a new docker that consists of Hashicorp Boundary and GitLab Runner.
+This project creates a new docker container that consists of Hashicorp Boundary and GitLab Runner.
 
-After creating instance of container, it signs into the boundary server and your pipeline can use boundary to connect to different servers.
+After creating instance of container, it signs into the Boundary service and your pipeline can connect to servers via Boundary.
 
-It has the following entrypoint for that:
+The Dockerfile usses the following entrypoint:
 
 ```
-ENTRYPOINT ["/bin/sh", "-c" , "./boundary-login.sh ; ./setup.sh ; gitlab-runner run"]
+ENTRYPOINT ["/bin/sh", "-c" , "./boundary-login.sh ; gitlab-runner run"]
 ```
 
 ## Environment variables
